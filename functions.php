@@ -57,7 +57,7 @@ function registrasi($data)
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // tambahkan user baru ke database
-    mysqli_query($connect_db, "INSERT INTO user VALUES ('', '$username', '$email', '$password')");
+    mysqli_query($connect_db, "INSERT INTO user VALUES (null, '$username', '$email', '$password')");
     return mysqli_affected_rows($connect_db);
 }
 
@@ -104,7 +104,7 @@ function penyewaan($data)
     $durasi = mysqli_real_escape_string($connect_db, htmlspecialchars($data["durasi"]));
 
     // query insert data
-    $query = "INSERT INTO penyewaan VALUES ('', '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
+    $query = "INSERT INTO penyewaan VALUES (null, '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
     mysqli_query($connect_db, $query);
     return mysqli_affected_rows($connect_db);
 }

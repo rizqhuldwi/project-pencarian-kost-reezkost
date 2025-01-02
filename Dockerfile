@@ -26,6 +26,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && docker-php-ext-install mysqli \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 # Install Node.js version 20 and npm
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
@@ -35,6 +38,9 @@ WORKDIR /var/www/html
 
 # Copy application files
 COPY . .
+
+# Install PHP dependencies
+RUN composer install --optimize-autoloader --no-dev --no-interaction --prefer-dist
 
 # Install npm dependencies
 RUN npm install
