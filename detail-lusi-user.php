@@ -18,19 +18,19 @@ if (isset($_POST['ajukan_sewa'])) {
 
 function penyewaan_lusi($data)
 {
-    global $connect_db;
-    $nama = mysqli_real_escape_string($connect_db, htmlspecialchars($data["nama"]));
-    $email = mysqli_real_escape_string($connect_db, htmlspecialchars($data["email"]));
-    $alamat = mysqli_real_escape_string($connect_db, htmlspecialchars($data["alamat"]));
-    $telephone = mysqli_real_escape_string($connect_db, htmlspecialchars($data["telephone"]));
-    $kamar = mysqli_real_escape_string($connect_db, htmlspecialchars($data["kamar"]));
-    $tanggal = mysqli_real_escape_string($connect_db, htmlspecialchars($data["tanggal"]));
-    $durasi = mysqli_real_escape_string($connect_db, htmlspecialchars($data["durasi"]));
+  global $connect_db;
+  $nama = mysqli_real_escape_string($connect_db, htmlspecialchars($data["nama"]));
+  $email = mysqli_real_escape_string($connect_db, htmlspecialchars($data["email"]));
+  $alamat = mysqli_real_escape_string($connect_db, htmlspecialchars($data["alamat"]));
+  $telephone = mysqli_real_escape_string($connect_db, htmlspecialchars($data["telephone"]));
+  $kamar = mysqli_real_escape_string($connect_db, htmlspecialchars($data["kamar"]));
+  $tanggal = mysqli_real_escape_string($connect_db, htmlspecialchars($data["tanggal"]));
+  $durasi = mysqli_real_escape_string($connect_db, htmlspecialchars($data["durasi"]));
 
-    // query insert data
-    $query = "INSERT INTO lusi VALUES ('', '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
-    mysqli_query($connect_db, $query);
-    return mysqli_affected_rows($connect_db);
+  // query insert data
+  $query = "INSERT INTO lusi VALUES (null, '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
+  mysqli_query($connect_db, $query);
+  return mysqli_affected_rows($connect_db);
 }
 
 ?>
@@ -85,9 +85,10 @@ function penyewaan_lusi($data)
         </div>
         <div class="facilities">
           <h3>Lokasi</h3>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3953.2852241733767!2d110.36729337500468!3d-7.759544992259503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNDUnMzQuNCJTIDExMMKwMjInMTEuNSJF!5e0!3m2!1sid!2sid!4v1734013843421!5m2!1sid!2sid" 
-            width="400" height="300" style="border:0;" allowfullscreen="" 
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3953.2852241733767!2d110.36729337500468!3d-7.759544992259503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNDUnMzQuNCJTIDExMMKwMjInMTEuNSJF!5e0!3m2!1sid!2sid!4v1734013843421!5m2!1sid!2sid"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
           <hr>
           <a href="index-user.php">&laquo Kembali</a>
@@ -141,4 +142,5 @@ function penyewaan_lusi($data)
     </div>
   </div>
 </body>
+
 </html>

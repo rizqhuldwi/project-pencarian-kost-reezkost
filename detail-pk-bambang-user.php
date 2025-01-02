@@ -28,7 +28,7 @@ function penyewaan_pk_bambang($data)
   $durasi = mysqli_real_escape_string($connect_db, htmlspecialchars($data["durasi"]));
 
   // query insert data
-  $query = "INSERT INTO pk_bambang VALUES ('', '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
+  $query = "INSERT INTO pk_bambang VALUES (null, '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
   mysqli_query($connect_db, $query);
   return mysqli_affected_rows($connect_db);
 }
@@ -57,8 +57,10 @@ function penyewaan_pk_bambang($data)
       <!-- Kost Information -->
       <div class="kost-info">
         <h1>Kost Pak Bambang </h1>
-        <p>Kost Pak Bambang adalah kost putra umum yang berlokasi di Trini, Trihanggo, Kec. Gamping, Kabupaten Sleman, Yogyakarta.
-          Kost ini menyediakan fasilitas umum yang lengkap dan spesifikasi kamar yang nyaman. Kost ini hanya bisa melakukan
+        <p>Kost Pak Bambang adalah kost putra umum yang berlokasi di Trini, Trihanggo, Kec. Gamping, Kabupaten
+          Sleman, Yogyakarta.
+          Kost ini menyediakan fasilitas umum yang lengkap dan spesifikasi kamar yang nyaman. Kost ini hanya
+          bisa melakukan
           penyewaan dalam waktu 1 Tahun / Pertahun.</p>
         <hr>
         <div class="facilities">
@@ -86,9 +88,10 @@ function penyewaan_pk_bambang($data)
         </div>
         <div class="facilities">
           <h3>Lokasi</h3>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d442.14553870124996!2d110.35349790606068!3d-7.7493429370930675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a594fb719712d%3A0x7d46aa6c0c7c7da4!2sKos%20Pak%20Bambang%20D!5e0!3m2!1sid!2sid!4v1735573903659!5m2!1sid!2sid"
-            width="400" height="300" style="border:0;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d442.14553870124996!2d110.35349790606068!3d-7.7493429370930675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a594fb719712d%3A0x7d46aa6c0c7c7da4!2sKos%20Pak%20Bambang%20D!5e0!3m2!1sid!2sid!4v1735573903659!5m2!1sid!2sid"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
           <hr>
           <a href="index-user.php">&laquo Kembali</a>

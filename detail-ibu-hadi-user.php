@@ -28,7 +28,7 @@ function penyewaan_ibu_hadi($data)
   $durasi = mysqli_real_escape_string($connect_db, htmlspecialchars($data["durasi"]));
 
   // query insert data
-  $query = "INSERT INTO ibu_hadi VALUES ('', '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
+  $query = "INSERT INTO ibu_hadi VALUES (null, '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
   mysqli_query($connect_db, $query);
   return mysqli_affected_rows($connect_db);
 }
@@ -57,7 +57,8 @@ function penyewaan_ibu_hadi($data)
       <!-- Kost Information -->
       <div class="kost-info">
         <h1>Kost Ibu Hadi </h1>
-        <p>Kost Ibu Hadi adalah kost putra umum yang berlokasi di Sebrang UTY Kampus 1/ UTY Jombor 50 meter, Ngemplak Nganti, Mlati, Sleman, Yogyakarta.
+        <p>Kost Ibu Hadi adalah kost putra umum yang berlokasi di Sebrang UTY Kampus 1/ UTY Jombor 50 meter,
+          Ngemplak Nganti, Mlati, Sleman, Yogyakarta.
           Kost ini menyediakan fasilitas umum yang lengkap dan spesifikasi kamar yang nyaman.
           Kost ini hanya bisa melakukan penyewaan dalam waktu 1 Tahun / Pertahun.</p>
         <hr>
@@ -76,7 +77,8 @@ function penyewaan_ibu_hadi($data)
           <p> • Kasur</p>
           <p> • Meja Belajar</p>
           <p> • Lemari</p>
-          <p> • Catatan : Untuk nomor kamar 1-6 berada di lantai bawah dan nomor kamar 7-12 berada di lantai dua</p>
+          <p> • Catatan : Untuk nomor kamar 1-6 berada di lantai bawah dan nomor kamar 7-12 berada di lantai
+            dua</p>
           <hr>
         </div>
         <div class="facilities">
@@ -87,8 +89,9 @@ function penyewaan_ibu_hadi($data)
         </div>
         <div class="facilities">
           <h3>Lokasi</h3>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253018.61893767363!2d110.190380078125!3d-7.745631499999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5994bf5910bd%3A0x842b39c2ebd2ada1!2sKost%20Putra%20Ibu%20Hadi!5e0!3m2!1sid!2sid!4v1735720427123!5m2!1sid!2sid" 
-            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253018.61893767363!2d110.190380078125!3d-7.745631499999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5994bf5910bd%3A0x842b39c2ebd2ada1!2sKost%20Putra%20Ibu%20Hadi!5e0!3m2!1sid!2sid!4v1735720427123!5m2!1sid!2sid"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
           <hr>

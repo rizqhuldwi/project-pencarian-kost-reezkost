@@ -20,19 +20,19 @@ if (isset($_POST['ajukan_sewa'])) {
 
 function penyewaan_nasocha($data)
 {
-    global $connect_db;
-    $nama = mysqli_real_escape_string($connect_db, htmlspecialchars($data["nama"]));
-    $email = mysqli_real_escape_string($connect_db, htmlspecialchars($data["email"]));
-    $alamat = mysqli_real_escape_string($connect_db, htmlspecialchars($data["alamat"]));
-    $telephone = mysqli_real_escape_string($connect_db, htmlspecialchars($data["telephone"]));
-    $kamar = mysqli_real_escape_string($connect_db, htmlspecialchars($data["kamar"]));
-    $tanggal = mysqli_real_escape_string($connect_db, htmlspecialchars($data["tanggal"]));
-    $durasi = mysqli_real_escape_string($connect_db, htmlspecialchars($data["durasi"]));
+  global $connect_db;
+  $nama = mysqli_real_escape_string($connect_db, htmlspecialchars($data["nama"]));
+  $email = mysqli_real_escape_string($connect_db, htmlspecialchars($data["email"]));
+  $alamat = mysqli_real_escape_string($connect_db, htmlspecialchars($data["alamat"]));
+  $telephone = mysqli_real_escape_string($connect_db, htmlspecialchars($data["telephone"]));
+  $kamar = mysqli_real_escape_string($connect_db, htmlspecialchars($data["kamar"]));
+  $tanggal = mysqli_real_escape_string($connect_db, htmlspecialchars($data["tanggal"]));
+  $durasi = mysqli_real_escape_string($connect_db, htmlspecialchars($data["durasi"]));
 
-    // query insert data
-    $query = "INSERT INTO nasocha VALUES ('', '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
-    mysqli_query($connect_db, $query);
-    return mysqli_affected_rows($connect_db);
+  // query insert data
+  $query = "INSERT INTO nasocha VALUES (null, '$nama', '$email', '$alamat', '$telephone', '$kamar', '$tanggal', '$durasi')";
+  mysqli_query($connect_db, $query);
+  return mysqli_affected_rows($connect_db);
 }
 
 ?>
@@ -60,8 +60,10 @@ function penyewaan_nasocha($data)
       <!-- Kost Information -->
       <div class="kost-info">
         <h1>Kost Nasocha </h1>
-        <p>Kost Nasocha adalah kost putra umum yang berlokasi di Jl. Sinom No. 104e Karangjati, Mlati, Sleman, Yogyakarta. Kost ini
-          menyediakan fasilitas umum yang lengkap dan spesifikasi kamar yang nyaman. Kost ini hanya bisa melakukan
+        <p>Kost Nasocha adalah kost putra umum yang berlokasi di Jl. Sinom No. 104e Karangjati, Mlati, Sleman,
+          Yogyakarta. Kost ini
+          menyediakan fasilitas umum yang lengkap dan spesifikasi kamar yang nyaman. Kost ini hanya bisa
+          melakukan
           penyewaan dalam waktu 6 Bulan.</p>
         <hr>
         <div class="facilities">
@@ -78,7 +80,8 @@ function penyewaan_nasocha($data)
           <p> • 3 x 3 meter</p>
           <p> • Kasur</p>
           <p> • Meja Belajar</p>
-          <p> • Catatan : Untuk nomor kamar 1-5 berada di lantai bawah dan nomor kamar 6-10 berada di lantai dua</p>
+          <p> • Catatan : Untuk nomor kamar 1-5 berada di lantai bawah dan nomor kamar 6-10 berada di lantai
+            dua</p>
           <hr>
         </div>
         <div class="facilities">
@@ -89,9 +92,10 @@ function penyewaan_nasocha($data)
         </div>
         <div class="facilities">
           <h3>Lokasi</h3>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7906.461439716404!2d110.366887!3d-7.765340000000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a584ffeedc4d9%3A0x85a9d7bbacaa8b2a!2sGg.%20Mijil%203%2C%20Kutu%20Dukuh%2C%20Sinduadi%2C%20Kec.%20Mlati%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055284!5e0!3m2!1sid!2sid!4v1733126159941!5m2!1sid!2sid"
-            width="400" height="300" style="border:0;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7906.461439716404!2d110.366887!3d-7.765340000000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a584ffeedc4d9%3A0x85a9d7bbacaa8b2a!2sGg.%20Mijil%203%2C%20Kutu%20Dukuh%2C%20Sinduadi%2C%20Kec.%20Mlati%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055284!5e0!3m2!1sid!2sid!4v1733126159941!5m2!1sid!2sid"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
           <hr>
           <a href="index-user.php">&laquo Kembali</a>
