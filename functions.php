@@ -1,8 +1,22 @@
 <?php
+
 use Dompdf\Dompdf;
 
+if (file_exists('.env')) {
+    $env = parse_ini_file('.env');
+    $dbHost = $env["DB_HOST"];
+    $dbUsername = $env["DB_USERNAME"];
+    $dbPassword = $env["DB_PASSWORD"];
+    $dbName = $env["DB_NAME"];
+} else {
+    $dbHost = getenv("DB_HOST");
+    $dbUsername = getenv("DB_USERNAME");
+    $dbPassword = getenv("DB_PASSWORD");
+    $dbName = getenv("DB_NAME");
+}
+
 // Koneksi ke database
-$connect_db = mysqli_connect("localhost", "root", "", "nasocha_kost");
+$connect_db = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 
 function query($query)
 {
